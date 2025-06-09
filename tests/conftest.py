@@ -18,7 +18,7 @@ def random_new_user():
     }
 
 @pytest.fixture
-def driver_sl():
+def driver():
     options = ChromeOptions()
     options.set_capability('acceptInsecureCerts', True)
     capabilities = {
@@ -38,7 +38,7 @@ def driver_sl():
 
 
 @pytest.fixture()
-def driver():
+def driver_chrome():
     driver = webdriver.Chrome()
     driver.get(Data.SITE_URL)
     yield driver
