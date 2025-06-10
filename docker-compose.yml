@@ -23,9 +23,11 @@ services:
       - selenoid
     command: ["--selenoid-uri", "http://selenoid:4444"]
 
-  test_docker:
+  autotests:
     build: .
-    container_name: test_docker
+    container_name: autotests
+    volumes:
+      - ".:/app"
     depends_on:
       - selenoid
     networks:
