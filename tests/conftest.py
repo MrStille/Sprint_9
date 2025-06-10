@@ -23,14 +23,6 @@ def random_new_user():
 @pytest.fixture
 def driver():
     options = ChromeOptions()
-    options.set_capability('acceptInsecureCerts', True)
-    capabilities = {
-        "browserName": "chrome",
-        "browserVersion": "128.0",
-        "selenoid:options": {
-            "enableVideo": False
-        }
-    }
     driver = webdriver.Remote(
         command_executor="https://selenoid:4444/wd/hub",
         options=options)
