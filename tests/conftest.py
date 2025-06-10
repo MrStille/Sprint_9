@@ -27,6 +27,7 @@ def driver():
         command_executor="http://selenoid:4444/wd/hub",
         options=options)
     driver.maximize_window()
+    driver.get(Data.SITE_URL)
     yield driver
     driver.quit()
 
