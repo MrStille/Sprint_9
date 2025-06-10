@@ -1,4 +1,7 @@
 import pytest
+import os
+import sys
+sys.path.append(os.getcwd())
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
 
@@ -30,7 +33,6 @@ def driver():
     }
     driver = webdriver.Remote(
         command_executor="https://selenoid:4444/wd/hub",
-        desired_capabilities=capabilities,
         options=options)
     driver.maximize_window()
     yield driver
