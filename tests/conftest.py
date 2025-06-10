@@ -24,7 +24,7 @@ def random_new_user():
 def driver():
     options = ChromeOptions()
     driver = webdriver.Remote(
-        command_executor="https://selenoid:4444/wd/hub",
+        command_executor="http://selenoid:4444/wd/hub",
         options=options)
     driver.maximize_window()
     yield driver
